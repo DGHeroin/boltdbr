@@ -15,7 +15,7 @@ before_script:
   - mkdir -p bin
   - FILE_NAME="$TRAVIS_OS_NAME"
 script:
-  - go build cmd/boltd/server.go -o bin/boltd-"$FILE_NAME"
+  - go build -o bin/boltd-"$FILE_NAME" cmd/boltd/server.go
   - ls -alh ./
   - ls -alh bin
 install:
