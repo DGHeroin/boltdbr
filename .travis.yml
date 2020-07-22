@@ -14,6 +14,7 @@ before_script:
   - go mod tidy
   - mkdir -p bin
   - FILE_NAME="$TRAVIS_OS_NAME"
+  - if [ "$TRAVIS_OS_NAME" = "windows" ]; then FILE_NAME=win64.exe ; fi
 script:
   - go build -o bin/boltd-"$FILE_NAME" cmd/boltd/server.go
   - ls -alh ./
